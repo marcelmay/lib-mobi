@@ -35,3 +35,7 @@ How to build
   Make sure you got [Maven 3.2.1+][maven_download] and JDK 1.7+ .
 
 [maven_download]: http://maven.apache.org
+
+Mics
+------
+Licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
