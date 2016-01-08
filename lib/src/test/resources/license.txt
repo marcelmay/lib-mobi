@@ -1,0 +1,6 @@
+The book is licensed under "Attribution-NonCommercial-ShareAlike 3.0 Unported"
+and used as an example mobi file.
+
+For the source of the book, see https://git-scm.com/book/en/v2 .
+
+See http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
