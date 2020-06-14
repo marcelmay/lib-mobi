@@ -1,14 +1,14 @@
 package de.m3y.mobi.standalone;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import de.m3y.mobi.MobiHeader;
-
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.json.JsonWriteFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import de.m3y.mobi.core.MobiHeader;
 
 /**
  * CLI runner.
@@ -34,7 +34,7 @@ public class Runner {
                         .enable(SerializationFeature.INDENT_OUTPUT)
                         .enable(SerializationFeature.WRAP_ROOT_VALUE)
                         .setSerializationInclusion(JsonInclude.Include.NON_NULL)
-                        .configure(JsonGenerator.Feature.ESCAPE_NON_ASCII, true)
+                        .configure(JsonWriteFeature.ESCAPE_NON_ASCII.mappedFeature(), true)
                         .disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
                 final MobiHeader header = MobiHeader.read(is);
                 if (!full) {

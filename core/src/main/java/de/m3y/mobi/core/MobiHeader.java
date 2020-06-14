@@ -1,7 +1,9 @@
-package de.m3y.mobi;
+package de.m3y.mobi.core;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -415,7 +417,7 @@ public class MobiHeader {
                 header.encoding = Charset.forName("CP1252");
                 break;
             case 65001:
-                header.encoding = Charset.forName("UTF-8");
+                header.encoding = StandardCharsets.UTF_8;
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported encoding type " + encoding);

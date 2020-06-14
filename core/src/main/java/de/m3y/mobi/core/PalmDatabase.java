@@ -1,4 +1,4 @@
-package de.m3y.mobi;
+package de.m3y.mobi.core;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -103,7 +103,7 @@ public class PalmDatabase {
             return header;
         }
 
-        private static Date convertPdpTimeToDate(int pdpTime) throws IOException {
+        private static Date convertPdpTimeToDate(int pdpTime) {
             // If the time has the top bit set, it's an unsigned 32-bit number counting from 1st Jan 1904
             // If the time has the top bit clear, it's a signed 32-bit number counting from 1st Jan 1970.
             if ((pdpTime & Integer.MIN_VALUE) == Integer.MIN_VALUE) {

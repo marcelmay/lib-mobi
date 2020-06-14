@@ -1,5 +1,7 @@
-package de.m3y.mobi;
+package de.m3y.mobi.core;
 
+import de.m3y.mobi.core.MobiHeader;
+import de.m3y.mobi.core.PalmDatabase;
 import org.junit.Test;
 
 import java.io.*;

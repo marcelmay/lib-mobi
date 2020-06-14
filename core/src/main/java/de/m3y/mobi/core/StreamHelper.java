@@ -1,4 +1,4 @@
-package de.m3y.mobi;
+package de.m3y.mobi.core;
 
 import java.io.DataInputStream;
 import java.io.IOException;
