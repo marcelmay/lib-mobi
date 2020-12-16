@@ -6,7 +6,7 @@ A simple lib for reading MOBI header data in Java.
 
 The example standalone runner extracts a MOBI - or AZW3 - header and prints it as JSON.
 
-Example (see [MobiHeaderTest](core/test/java/de/m3y/mobi/core/MobiHeaderTest.java) class)
+Example (see [MobiHeaderTest](core/src/test/java/de/m3y/mobi/core/MobiHeaderTest.java) class)
 ----------------------------------
 
 ```java
