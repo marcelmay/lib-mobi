@@ -90,10 +90,10 @@ public class MobiHeaderTest {
             assertEquals(337, header.firstNonBookIndex);
             assertEquals(616, header.fullNameOffset);
             assertEquals(7, header.fullNameLength);
-            assertEquals(header.huffmanRecordOffset, 0);
-            assertEquals(header.huffmanRecordCount, 0);
-            assertEquals(header.huffmanTableLength, 0);
-            assertEquals(header.huffmanTableOffset, 0);
+            assertEquals(0, header.huffmanRecordOffset);
+            assertEquals(0, header.huffmanRecordCount);
+            assertEquals(0, header.huffmanTableLength);
+            assertEquals(0, header.huffmanTableOffset);
 
             assertEquals("en", header.exthHeader.getRecordByTypeCode(MobiHeader.Exth.RecordType.LANGUAGE).data);
         }

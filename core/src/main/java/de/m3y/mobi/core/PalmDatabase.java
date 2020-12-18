@@ -3,6 +3,7 @@ package de.m3y.mobi.core;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -50,7 +51,7 @@ public class PalmDatabase {
      */
     public static class Header {
         public String name; // 32byte
-        public short unknown1;
+        public short attributes;
         public MobiHeader.CompressionType compression; // 2 byte
         public short version;
         public Date creationDate;
@@ -73,13 +74,16 @@ public class PalmDatabase {
          * @param is the input stream.
          * @return the representing header.
          * @throws IOException on error.
+         *
+         * See https://wiki.mobileread.com/wiki/PDB#Palm_Database_Format and
+         *  https://wiki.mobileread.com/wiki/MOBI
          */
         public static Header read(DataInputStream is) throws IOException {
             Header header = new Header();
 
-            header.name = StreamHelper.readStringTillNull(is, 32);
+            header.name = StreamHelper.readStringTillNull(is, 32, StandardCharsets.ISO_8859_1);
 
-            header.unknown1 = is.readShort();
+            header.attributes = is.readShort();
             header.version = is.readShort();
             header.creationDate = convertPdpTimeToDate(is.readInt());
             header.modificationDate = convertPdpTimeToDate(is.readInt());
@@ -87,8 +91,8 @@ public class PalmDatabase {
             header.modificationNumber = is.readInt();
             header.appInfoId = is.readInt();
             header.sortInfoId = is.readInt();
-            header.type = StreamHelper.readString(is, 4);
-            header.creator = StreamHelper.readString(is, 4);
+            header.type = StreamHelper.readString(is, 4, StandardCharsets.ISO_8859_1);
+            header.creator = StreamHelper.readString(is, 4, StandardCharsets.ISO_8859_1);
             header.uniqueIdSeed = is.readInt();
             header.nextRecordListId = is.readInt();
             header.numRecords = is.readShort();
@@ -119,7 +123,7 @@ public class PalmDatabase {
         public String toString() {
             return "PalmDOCHeader{" +
                     "name='" + name + '\'' +
-                    ", unknown1=" + unknown1 +
+                    ", attributes=" + attributes +
                     ", version=" + version +
                     ", creationDate=" + creationDate +
                     ", modificationDate=" + modificationDate +

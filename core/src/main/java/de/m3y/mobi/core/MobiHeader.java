@@ -41,15 +41,17 @@ public class MobiHeader {
              * Reads a new record from stream.
              *
              * @param is the input stream.
+             * @param encoding the encoding charset
              * @return the representing header.
              * @throws IOException on error.
              */
-            public static Record read(DataInputStream is) throws IOException {
+            public static Record read(DataInputStream is, Charset encoding) throws IOException {
                 Record record = new Record();
                 record.typeCode = is.readInt();
                 record.typeLabel = RecordType.getLabel(record.typeCode);
                 record.length = is.readInt();
-                record.data = StreamHelper.readString(is, record.length - 8 /* size of type and length */);
+                record.data = StreamHelper.readString(is,
+                        record.length - 8 /* size of type and length */, encoding);
                 return record;
             }
 
@@ -311,12 +313,13 @@ public class MobiHeader {
              * Reads EXTH header and records.
              *
              * @param is the input stream.
+             * @param encoding the encoding charset
              * @return the EXTH header including records.
              * @throws IOException on error.
              */
-            public static Header read(DataInputStream is) throws IOException {
+            public static Header read(DataInputStream is, Charset encoding) throws IOException {
                 Header header = new Header();
-                header.identifier = StreamHelper.readString(is, 4);
+                header.identifier = StreamHelper.readString(is, 4, StandardCharsets.US_ASCII); //  E X T H
                 if (!"EXTH".equals(header.identifier)) {
                     throw new IllegalStateException("Expected EXTH header to start with identifier EXTH but got " + header.identifier);
                 }
@@ -325,7 +328,7 @@ public class MobiHeader {
                 header.records = new Record[header.recordCount];
                 header.recordMap = new HashMap<>(header.recordCount);
                 for (int i = 0; i < header.recordCount; i++) {
-                    final Record record = Record.read(is);
+                    final Record record = Record.read(is, encoding);
                     header.records[i] = record;
                     header.recordMap.put(Integer.valueOf(record.typeCode), record);
                 }
@@ -408,7 +411,7 @@ public class MobiHeader {
         is.skipBytes(2);
 
         // http://wiki.mobileread.com/wiki/MOBI#MOBI_Header
-        header.identifier = StreamHelper.readString(is, 4);
+        header.identifier = StreamHelper.readString(is, 4, StandardCharsets.US_ASCII);
         header.headerLength = is.readInt();
         header.mobiType = MobiType.convert(is.readInt());
         int encoding = is.readInt();
@@ -454,7 +457,7 @@ public class MobiHeader {
 //        header.drmFlags = is.readInt();
 
         if (header.hasExth) {
-            header.exthHeader = Exth.Header.read(is);
+            header.exthHeader = Exth.Header.read(is, header.encoding);
         }
 
         return header;
@@ -538,6 +541,7 @@ public class MobiHeader {
                     return TEXT;
                 case 518:
                     return HTML;
+
                 default:
                     throw new IllegalArgumentException("Illegal type code " + code);
             }
