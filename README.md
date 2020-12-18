@@ -1,6 +1,6 @@
 libmobi
 =======================================
-![Maven Central](https://img.shields.io/maven-central/v/de.m3y.libmobi/libmobi-core) [![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)](LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/de.m3y.libmobi/libmobi-core)](https://search.maven.org/search?q=g:de.m3y.libmobi) [![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)](LICENSE)
 
 A simple lib for reading MOBI header data in Java.
 
