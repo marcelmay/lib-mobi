@@ -1,8 +1,6 @@
 package de.m3y.mobi.standalone;
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.json.JsonWriteFeature;
@@ -27,9 +25,7 @@ public class Runner {
             }
 
             try (final DataInputStream is = new DataInputStream(new BufferedInputStream(
-                    new FileInputStream(new File(filename))))) {
-                Set<String> filterProperties = new HashSet<>();
-                filterProperties.add("records");
+                    new FileInputStream(filename)))) {
                 ObjectMapper mapper = new ObjectMapper()
                         .enable(SerializationFeature.INDENT_OUTPUT)
                         .enable(SerializationFeature.WRAP_ROOT_VALUE)

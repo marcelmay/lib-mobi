@@ -330,7 +330,7 @@ public class MobiHeader {
                 for (int i = 0; i < header.recordCount; i++) {
                     final Record record = Record.read(is, encoding);
                     header.records[i] = record;
-                    header.recordMap.put(Integer.valueOf(record.typeCode), record);
+                    header.recordMap.put(record.typeCode, record);
                 }
                 // Null bytes to pad the EXTH header to a multiple of four bytes (none if the header is already
                 // a multiple of four). This padding is not included in the EXTH header length.
@@ -345,7 +345,7 @@ public class MobiHeader {
              * @return the record or null if not available.
              */
             public Record getRecordByTypeCode(int recordTypeCode) {
-                return recordMap.get(Integer.valueOf(recordTypeCode));
+                return recordMap.get(recordTypeCode);
             }
 
             @Override
@@ -498,7 +498,7 @@ public class MobiHeader {
         TEXT(517),
         HTML(518);
 
-        int code;
+        final int code;
 
         MobiType(int code) {
             this.code = code;
