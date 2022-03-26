@@ -22,7 +22,8 @@ public class StreamHelper {
      * @return string read from stream.
      * @throws IOException on io error.
      */
-    public static String readStringTillNull(DataInputStream is, int numberOfBytes, Charset charset) throws IOException {
+    public static String readStringTillNull(DataInputStream is, int numberOfBytes, Charset charset)
+            throws IOException {
         byte[] b = new byte[numberOfBytes];
         is.readFully(b);
         // Find numberOfBytes depending on first 0x0 byte

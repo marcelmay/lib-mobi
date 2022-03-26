@@ -74,9 +74,9 @@ public class PalmDatabase {
          * @param is the input stream.
          * @return the representing header.
          * @throws IOException on error.
-         *
-         * See https://wiki.mobileread.com/wiki/PDB#Palm_Database_Format and
-         *  https://wiki.mobileread.com/wiki/MOBI
+         *                     <p>
+         *                     See https://wiki.mobileread.com/wiki/PDB#Palm_Database_Format and
+         *                     https://wiki.mobileread.com/wiki/MOBI
          */
         public static Header read(DataInputStream is) throws IOException {
             Header header = new Header();
@@ -137,7 +137,7 @@ public class PalmDatabase {
                     ", uniqueIdSeed=" + uniqueIdSeed +
                     ", compression=" + compression +
                     ", numRecords=" + numRecords +
-                    ", records=" + (records.length>10?"... (too long)":Arrays.toString(records)) +
+                    ", records=" + (records.length > 10 ? "... (too long)" : Arrays.toString(records)) +
                     '}';
         }
     }

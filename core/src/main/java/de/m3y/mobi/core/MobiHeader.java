@@ -40,7 +40,7 @@ public class MobiHeader {
             /**
              * Reads a new record from stream.
              *
-             * @param is the input stream.
+             * @param is       the input stream.
              * @param encoding the encoding charset
              * @return the representing header.
              * @throws IOException on error.
@@ -93,9 +93,10 @@ public class MobiHeader {
             public static final int VERSION_NUMBER = 114;
             public static final int SAMPLE = 115;
             public static final int START_READING = 116;
-            public static final int ADULT = 117;                    // Mobipocket Creator adds this if Adult only is checked; contents: "yes"
-            public static final int RETAIL_PRICE = 118;             // As text, e.g. "4.99"
-            public static final int RETAIL_PRICE_CURRENCY = 119;    // As text, e.g. "USD"
+            public static final int ADULT = 117;                 // Mobipocket Creator adds this if
+                                                                 // Adult only is checked; contents: "yes"
+            public static final int RETAIL_PRICE = 118;          // As text, e.g. "4.99"
+            public static final int RETAIL_PRICE_CURRENCY = 119; // As text, e.g. "USD"
             public static final int KF8_BOUNDARY_OFFSET = 121;
             public static final int FIXED_LAYOUT = 122;
             public static final int BOOK_TYPE = 123;
@@ -107,19 +108,24 @@ public class MobiHeader {
             public static final int KF8_COVER_URI = 129;
             public static final int REGION_MAGNIFICATION = 132;
             public static final int DICT_SHORT_NAME = 200;
-            public static final int COVER_OFFSET = 201;             // Add to first image field in Mobi Header to find PDB record containing the cover image
-            public static final int THUMB_OFFSET = 202;             // Add to first image field in Mobi Header to find PDB record containing the thumbnail cover image
+            public static final int COVER_OFFSET = 201;             // Add to first image field in Mobi Header to find
+                                                                    // PDB record containing the cover image
+            public static final int THUMB_OFFSET = 202;             // Add to first image field in Mobi Header to find
+                                                                    // PDB record containing the thumbnail cover image
             public static final int HAS_FAKE_COVER = 203;
-            public static final int CREATOR_SOFTWARE_RECORDS = 204; // 204-207 are usually the same for all books from a certain source
+            public static final int CREATOR_SOFTWARE_RECORDS = 204; // 204-207 are usually the same for all books
+                                                                    // from a certain source
             public static final int CREATOR_MAJOR_VERSION = 205;
             public static final int CREATOR_MINOR_VERSION = 206;
             public static final int CREATOR_BUILD_NUMBER = 207;
             public static final int WATERMARK = 208;
-            public static final int TAMPER_PROOF_KEYS = 209;        // Used by the Kindle  = and Android app) for generating book-specific PIDs.
+            public static final int TAMPER_PROOF_KEYS = 209;        // Used by the Kindle  = and Android app) for
+                                                                    // generating book-specific PIDs.
             public static final int FONT_SIGNATURE = 300;
             public static final int CLIPPING_LIMIT = 401;
             public static final int PUBLISHER_LIMIT = 402;
-            public static final int TEXT_TO_SPEECH = 403;           // 1 - Text to Speech disabled; 0 - Text to Speech enabled
+            public static final int TEXT_TO_SPEECH = 403;           // 1 - Text to Speech disabled;
+                                                                    // 0 - Text to Speech enabled
             public static final int TTS_FLAG = 404;
             public static final int RENT_BORROW_FLAG = 405;
             public static final int RENT_BORROW_EXPIRATION = 406;
@@ -312,16 +318,17 @@ public class MobiHeader {
             /**
              * Reads EXTH header and records.
              *
-             * @param is the input stream.
+             * @param is       the input stream.
              * @param encoding the encoding charset
              * @return the EXTH header including records.
              * @throws IOException on error.
              */
             public static Header read(DataInputStream is, Charset encoding) throws IOException {
                 Header header = new Header();
-                header.identifier = StreamHelper.readString(is, 4, StandardCharsets.US_ASCII); //  E X T H
+                header.identifier = StreamHelper.readString(is, 4, StandardCharsets.US_ASCII); // EXTH
                 if (!"EXTH".equals(header.identifier)) {
-                    throw new IllegalStateException("Expected EXTH header to start with identifier EXTH but got " + header.identifier);
+                    throw new IllegalStateException(
+                            "Expected EXTH header to start with identifier EXTH but got " + header.identifier);
                 }
                 header.headerLength = is.readInt();
                 header.recordCount = is.readInt();
