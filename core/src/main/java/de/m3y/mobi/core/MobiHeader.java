@@ -18,14 +18,14 @@ import java.util.Map;
  * final MobiHeader header = MobiHeader.read(is);
  * </code>
  * <p/>
- * For more info about MOBI, see http://wiki.mobileread.com/wiki/MOBI
+ * For more info about MOBI, see <a href="http://wiki.mobileread.com/wiki/MOBI">http://wiki.mobileread.com/wiki/MOBI</a>
  */
 public class MobiHeader {
 
     /**
      * Reads MOBI EXTH.
      * <p/>
-     * See http://wiki.mobileread.com/wiki/MOBI#EXTH_Header
+     * See <a href="http://wiki.mobileread.com/wiki/MOBI#EXTH_Header">"http://wiki.mobileread.com/wiki/MOBI#EXTH_Header</a>
      */
     public static class Exth {
         /**
@@ -69,8 +69,8 @@ public class MobiHeader {
         /**
          * Helper for dealing with EXTH Header types.
          * <p/>
-         * See http://wiki.mobileread.com/wiki/MOBI#EXTH_Header
-         * and https://github.com/dougmassay/kindleunpack-calibre-plugin/blob/master/core_subtree/lib/mobi_header.py
+         * See <a href="http://wiki.mobileread.com/wiki/MOBI#EXTH_Header">http://wiki.mobileread.com/wiki/MOBI#EXTH_Header</a>
+         * and <a href="https://github.com/dougmassay/kindleunpack-calibre-plugin/blob/master/core_subtree/lib/mobi_header.py">https://github.com/dougmassay/kindleunpack-calibre-plugin/blob/master/core_subtree/lib/mobi_header.py</a>
          */
         public static class RecordType {
             public static final int DRM_SERVER_ID = 1;
@@ -108,9 +108,9 @@ public class MobiHeader {
             public static final int KF8_COVER_URI = 129;
             public static final int REGION_MAGNIFICATION = 132;
             public static final int DICT_SHORT_NAME = 200;
-            public static final int COVER_OFFSET = 201;             // Add to first image field in Mobi Header to find
+            public static final int COVER_OFFSET = 201;             // Add to the first image field in Mobi Header to find
                                                                     // PDB record containing the cover image
-            public static final int THUMB_OFFSET = 202;             // Add to first image field in Mobi Header to find
+            public static final int THUMB_OFFSET = 202;             // Add to the first image field in Mobi Header to find
                                                                     // PDB record containing the thumbnail cover image
             public static final int HAS_FAKE_COVER = 203;
             public static final int CREATOR_SOFTWARE_RECORDS = 204; // 204-207 are usually the same for all books
@@ -119,7 +119,7 @@ public class MobiHeader {
             public static final int CREATOR_MINOR_VERSION = 206;
             public static final int CREATOR_BUILD_NUMBER = 207;
             public static final int WATERMARK = 208;
-            public static final int TAMPER_PROOF_KEYS = 209;        // Used by the Kindle  = and Android app) for
+            public static final int TAMPER_PROOF_KEYS = 209;        // Used by the Kindle and Android app for
                                                                     // generating book-specific PIDs.
             public static final int FONT_SIGNATURE = 300;
             public static final int CLIPPING_LIMIT = 401;
@@ -348,7 +348,7 @@ public class MobiHeader {
             /**
              * Gets an EXTH records by record type code.
              *
-             * @param recordTypeCode the record type code, eg 104 for ISBN.
+             * @param recordTypeCode the record type code, e.g., 104 for ISBN.
              * @return the record or null if not available.
              */
             public Record getRecordByTypeCode(int recordTypeCode) {

@@ -1,6 +1,8 @@
 package de.m3y.mobi.standalone;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.json.JsonWriteFeature;
@@ -25,7 +27,7 @@ public class Runner {
             }
 
             try (final DataInputStream is = new DataInputStream(new BufferedInputStream(
-                    new FileInputStream(filename)))) {
+                    Files.newInputStream(Paths.get(filename))))) {
                 ObjectMapper mapper = new ObjectMapper()
                         .enable(SerializationFeature.INDENT_OUTPUT)
                         .enable(SerializationFeature.WRAP_ROOT_VALUE)

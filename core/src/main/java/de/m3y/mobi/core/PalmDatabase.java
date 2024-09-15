@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Palm database (PDB) contains one header and zero to many records.
  * <p/>
- * http://wiki.mobileread.com/wiki/PDB
+ * <a href="http://wiki.mobileread.com/wiki/PDB">http://wiki.mobileread.com/wiki/PDB</a>
  */
 public class PalmDatabase {
     /**
@@ -74,9 +74,9 @@ public class PalmDatabase {
          * @param is the input stream.
          * @return the representing header.
          * @throws IOException on error.
-         *                     <p>
-         *                     See https://wiki.mobileread.com/wiki/PDB#Palm_Database_Format and
-         *                     https://wiki.mobileread.com/wiki/MOBI
+         * <p>
+         * See <a href="https://wiki.mobileread.com/wiki/PDB#Palm_Database_Format">https://wiki.mobileread.com/wiki/PDB#Palm_Database_Format</a> and
+         * <a href="https://wiki.mobileread.com/wiki/MOBI">https://wiki.mobileread.com/wiki/MOBI</a>
          */
         public static Header read(DataInputStream is) throws IOException {
             Header header = new Header();
