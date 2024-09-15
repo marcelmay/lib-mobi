@@ -10,7 +10,7 @@
     <groupId>de.m3y.libmobi</groupId>
     <artifactId>libmobi-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.1-SNAPSHOT</version>
 
     <licenses>
         <license>
@@ -30,7 +30,7 @@
         <url>
             https@github.com:marcelmay/lib-mobi
         </url>
-        <tag>release-1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
@@ -184,12 +184,12 @@
             <dependency>
                 <groupId>de.m3y.libmobi</groupId>
                 <artifactId>libmobi-core</artifactId>
-                <version>1.0.2</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>de.m3y.libmobi</groupId>
                 <artifactId>libmobi-standalone</artifactId>
-                <version>1.0.2</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <!-- JSON export -->
             <dependency>
