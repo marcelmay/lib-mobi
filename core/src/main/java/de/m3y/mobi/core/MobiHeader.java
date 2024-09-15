@@ -10,26 +10,26 @@ import java.util.Map;
 
 /**
  * Reads MOBI header data.
- * <p/>
+ * <p>
  * Example:
  * <code>
  * try (final DataInputStream is = new DataInputStream(new BufferedInputStream(
  * getClass().getResourceAsStream("/progit-en.984.mobi")))) {
  * final MobiHeader header = MobiHeader.read(is);
  * </code>
- * <p/>
+ * <p>
  * For more info about MOBI, see <a href="http://wiki.mobileread.com/wiki/MOBI">http://wiki.mobileread.com/wiki/MOBI</a>
  */
 public class MobiHeader {
 
     /**
      * Reads MOBI EXTH.
-     * <p/>
+     * <p>
      * See <a href="http://wiki.mobileread.com/wiki/MOBI#EXTH_Header">"http://wiki.mobileread.com/wiki/MOBI#EXTH_Header</a>
      */
     public static class Exth {
         /**
-         * A EXTH record.
+         * An EXTH record.
          */
         public static class Record {
             public int typeCode;
@@ -68,7 +68,7 @@ public class MobiHeader {
 
         /**
          * Helper for dealing with EXTH Header types.
-         * <p/>
+         * <p>
          * See <a href="http://wiki.mobileread.com/wiki/MOBI#EXTH_Header">http://wiki.mobileread.com/wiki/MOBI#EXTH_Header</a>
          * and <a href="https://github.com/dougmassay/kindleunpack-calibre-plugin/blob/master/core_subtree/lib/mobi_header.py">https://github.com/dougmassay/kindleunpack-calibre-plugin/blob/master/core_subtree/lib/mobi_header.py</a>
          */

@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * Palm database (PDB) contains one header and zero to many records.
- * <p/>
+ * <p>
  * <a href="http://wiki.mobileread.com/wiki/PDB">http://wiki.mobileread.com/wiki/PDB</a>
  */
 public class PalmDatabase {
