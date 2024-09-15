@@ -73,7 +73,6 @@
                         <compilerArgument>-Xlint:all</compilerArgument>
                         <showWarnings>true</showWarnings>
                         <showDeprecation>true</showDeprecation>
-                        <optimize>true</optimize>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -162,8 +161,11 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.6</version>
+                                    <version>3.9</version>
                                 </requireMavenVersion>
+                                <requireJavaVersion>
+                                  <version>1.8</version>
+                                </requireJavaVersion>
                             </rules>
                         </configuration>
                     </execution>
