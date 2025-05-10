@@ -6,12 +6,12 @@
 
     <artifactId>libmobi-standalone</artifactId>
     <packaging>jar</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0.3</version>
 
     <parent>
         <groupId>de.m3y.libmobi</groupId>
         <artifactId>libmobi-parent</artifactId>
-        <version>1.1-SNAPSHOT</version>
+        <version>1.0.3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 

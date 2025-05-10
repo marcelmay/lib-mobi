@@ -1,7 +1,6 @@
 <?xml version='1.0'?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>libmobi</name>
     <url>https://github.com/marcelmay/lib-mobi</url>
@@ -11,7 +10,7 @@
     <groupId>de.m3y.libmobi</groupId>
     <artifactId>libmobi-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0.3</version>
 
     <licenses>
         <license>
@@ -31,7 +30,7 @@
         <url>
             https://github.com/marcelmay/lib-mobi
         </url>
-        <tag>HEAD</tag>
+        <tag>release-1.0.3</tag>
     </scm>
 
     <issueManagement>
@@ -193,12 +192,12 @@
             <dependency>
                 <groupId>de.m3y.libmobi</groupId>
                 <artifactId>libmobi-core</artifactId>
-                <version>1.1-SNAPSHOT</version>
+                <version>1.0.3</version>
             </dependency>
             <dependency>
                 <groupId>de.m3y.libmobi</groupId>
                 <artifactId>libmobi-standalone</artifactId>
-                <version>1.1-SNAPSHOT</version>
+                <version>1.0.3</version>
             </dependency>
             <!-- JSON export -->
             <dependency>
